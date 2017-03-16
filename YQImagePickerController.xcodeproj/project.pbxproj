@@ -74,6 +74,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E8185C321E7A2C4F00D923E8 /* YQImagePickerController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = YQImagePickerController;
+			sourceTree = "<group>";
+		};
 		E81F95BA1E74380E00EFADEF = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +104,13 @@
 		E81F95C51E74380E00EFADEF /* YQImagePickerController */ = {
 			isa = PBXGroup;
 			children = (
+				E8185C321E7A2C4F00D923E8 /* YQImagePickerController */,
 				E81F95C61E74380E00EFADEF /* AppDelegate.swift */,
 				E81F95C81E74380E00EFADEF /* ViewController.swift */,
-				E81F95CA1E74380E00EFADEF /* Main.storyboard */,
 				E81F95CD1E74380E00EFADEF /* Assets.xcassets */,
 				E81F95CF1E74380E00EFADEF /* LaunchScreen.storyboard */,
 				E81F95D21E74380E00EFADEF /* Info.plist */,
+				E81F95CA1E74380E00EFADEF /* Main.storyboard */,
 			);
 			path = YQImagePickerController;
 			sourceTree = "<group>";
@@ -512,6 +520,7 @@
 				E81F95ED1E74380E00EFADEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E81F95EE1E74380E00EFADEF /* Build configuration list for PBXNativeTarget "YQImagePickerControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +529,7 @@
 				E81F95F01E74380E00EFADEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E81F95F11E74380E00EFADEF /* Build configuration list for PBXNativeTarget "YQImagePickerControllerUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +538,7 @@
 				E81F95F31E74380E00EFADEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
