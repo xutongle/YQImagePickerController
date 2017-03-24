@@ -18,9 +18,7 @@ class ViewController: UIViewController {
     
     @IBAction func btnDidClick(_ sender: Any) {
         
-        let picker = YQImagePickerController()
-        
-        picker.pickerDelegate = self
+        let picker = YQImagePickerController(delegate: self)
         
         self.present(picker, animated: true, completion: nil)
         
@@ -31,7 +29,7 @@ class ViewController: UIViewController {
 //MARK:- YQImagePickerControllerDelegate
 
 
-extension ViewController: YQImagePickerControllerDelegate {
+extension ViewController: YQImagePickerControllerDelegate, UIImagePickerControllerDelegate {
 
     func imagePickerController(_ picker: YQImagePickerController!, didFinishPickingVideo coverImage: UIImage!, sourceAssets asset: Any!) {
         

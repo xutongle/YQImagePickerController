@@ -26,10 +26,43 @@ import Photos
 }
 
 
+//MARK:- YQImagePickerController 基本属性和简单的设置
+
 class YQImagePickerController: UINavigationController {
     
     weak var pickerDelegate: YQImagePickerControllerDelegate?
-
+    
+    private var maxImageCount: NSInteger = 9
+    
+    private var columnNumber: NSInteger = 3
+    
+    convenience init(delegate: YQImagePickerControllerDelegate?){
+        
+        self.init(maxImageCount: 9, columnNumber: 3, delegate: delegate)
+    }
+    
+    convenience init(maxImageCount: NSInteger, delegate: YQImagePickerControllerDelegate?){
+        
+        self.init(maxImageCount: maxImageCount, columnNumber: 3, delegate: delegate)
+    }
+ 
+    convenience init(columnNumber: NSInteger, delegate: YQImagePickerControllerDelegate?){
+        
+        self.init(maxImageCount: 9, columnNumber: columnNumber, delegate: delegate)
+    }
+    
+    init(maxImageCount: NSInteger, columnNumber: NSInteger, delegate: YQImagePickerControllerDelegate?){
+        
+        self.maxImageCount = maxImageCount
+        
+        self.columnNumber = columnNumber
+        
+        self.pickerDelegate = delegate
+        
+        let rootViewController = YQImageController(maxImageCount: self.maxImageCount, columnNumber: self.columnNumber)
+        
+        super.init(rootViewController: rootViewController)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()  //
@@ -37,7 +70,17 @@ class YQImagePickerController: UINavigationController {
         //设置导航栏基本样式
         self.setupNavgationBar()
     }
+    
+    //重写系统的初始化方法
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    //固定写法
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
+
 
 //MARK:- 设置导航栏
 
