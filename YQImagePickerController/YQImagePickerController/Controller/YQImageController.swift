@@ -138,7 +138,7 @@ extension YQImageController {
 }
 
 
-// MARK: UICollectionViewDataSource
+// MARK: UICollectionViewDataSource && UICollectionViewDelegate
 extension YQImageController {
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -159,5 +159,12 @@ extension YQImageController {
         cell.backgroundColor = UIColor.purple
         
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let previewVC = YQImagePreviewController()
+        
+        self.navigationController?.pushViewController(previewVC, animated: true)
     }
 }

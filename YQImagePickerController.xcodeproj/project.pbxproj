@@ -21,6 +21,7 @@
 		E8DC76FE1E84F61300E33D5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DC76FC1E84F61300E33D5B /* AppDelegate.swift */; };
 		E8DC76FF1E84F61300E33D5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DC76FD1E84F61300E33D5B /* ViewController.swift */; };
 		E8F54E921E865444006668F5 /* YQImagePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F54E911E865444006668F5 /* YQImagePreviewController.swift */; };
+		E8F54E941E86A09F006668F5 /* YQImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F54E931E86A09F006668F5 /* YQImageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		E8DC76FC1E84F61300E33D5B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8DC76FD1E84F61300E33D5B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E8F54E911E865444006668F5 /* YQImagePreviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQImagePreviewController.swift; sourceTree = "<group>"; };
+		E8F54E931E86A09F006668F5 /* YQImageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQImageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			children = (
 				E82454301E8577F000B06760 /* YQAlbumModel.swift */,
 				E82454311E8577F000B06760 /* YQAssetModel.swift */,
+				E8F54E931E86A09F006668F5 /* YQImageManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				E8DC76FE1E84F61300E33D5B /* AppDelegate.swift in Sources */,
 				E82454351E8577F000B06760 /* YQImagePickerController.swift in Sources */,
 				E8CA0FFE1E859C3100F8B9C2 /* YQAlbumCell.swift in Sources */,
+				E8F54E941E86A09F006668F5 /* YQImageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
