@@ -12,16 +12,16 @@ import Photos
 @objc protocol YQImagePickerControllerDelegate: NSObjectProtocol {
     
     //选取完普通图片之后会执行该代理方法
-    @objc optional func imagePickerController(_ picker: YQImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool)
+    @objc optional func imagePickerController(_ picker: YQImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [PHAsset]!, isSelectOriginalPhoto: Bool)
     
     //选取完一张GIF动图之后会执行该代理方法
-    @objc optional func imagePickerController(_ picker: YQImagePickerController!, didFinishPickingGifImage animatedImage: UIImage!, sourceAssets asset: Any!)
+    @objc optional func imagePickerController(_ picker: YQImagePickerController!, didFinishPickingGifImage animatedImage: UIImage!, sourceAssets asset: PHAsset!)
     
     //选取完视频资源之后会执行该代理方法
-    @objc optional func imagePickerController(_ picker: YQImagePickerController!, didFinishPickingVideo coverImage: UIImage!, sourceAssets asset: Any!)
+    @objc optional func imagePickerController(_ picker: YQImagePickerController!, didFinishPickingVideo coverImage: UIImage!, sourceAssets asset: PHAsset!)
     
     //用户点击取消按钮后会执行该代理方法
-    @objc optional func imagePickerControllerDidClickCancelButton(_ picker: YQImagePickerController!)
+    @objc optional func imagePickerControllerCancelButtonDidClick(_ picker: YQImagePickerController!)
     
 }
 
@@ -88,9 +88,3 @@ class YQImagePickerController: UINavigationController {
 }
 
 
-////MARK:- 设置导航栏
-//
-//extension YQImagePickerController {
-//    
-//
-//}

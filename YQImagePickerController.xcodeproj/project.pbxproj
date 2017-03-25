@@ -164,9 +164,9 @@
 		E824542F1E8577F000B06760 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E8F54E931E86A09F006668F5 /* YQImageManager.swift */,
 				E82454301E8577F000B06760 /* YQAlbumModel.swift */,
 				E82454311E8577F000B06760 /* YQAssetModel.swift */,
-				E8F54E931E86A09F006668F5 /* YQImageManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
