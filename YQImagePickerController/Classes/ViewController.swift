@@ -23,7 +23,6 @@ class ViewController: UIViewController {
         self.present(picker, animated: true, completion: nil)
         
     }
-    
 }
 
 //MARK:- YQImagePickerControllerDelegate

@@ -30,11 +30,8 @@ import Photos
 
 class YQImagePickerController: UINavigationController {
     
+    //代理属性
     weak var pickerDelegate: YQImagePickerControllerDelegate?
-    
-    private var maxImageCount: NSInteger = 9
-    
-    private var columnNumber: NSInteger = 3
     
     convenience init(delegate: YQImagePickerControllerDelegate?){
         
@@ -53,13 +50,9 @@ class YQImagePickerController: UINavigationController {
     
     init(maxImageCount: NSInteger, columnNumber: NSInteger, delegate: YQImagePickerControllerDelegate?){
         
-        self.maxImageCount = maxImageCount
-        
-        self.columnNumber = columnNumber
-        
         self.pickerDelegate = delegate
         
-        let rootViewController = YQImageController(maxImageCount: self.maxImageCount, columnNumber: self.columnNumber)
+        let rootViewController = YQImageController(maxImageCount: maxImageCount, columnNumber: columnNumber)
         
         super.init(rootViewController: rootViewController)
     }
@@ -95,12 +88,6 @@ extension YQImagePickerController {
         self.navigationBar.tintColor = UIColor.white
         self.automaticallyAdjustsScrollViewInsets = false;
         
-        
-        //let titleView = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 30))
-        //titleView.addTarget(self, action: #selector(YQImagePickerController.titleViewDidClick), for: .touchUpInside)
-        //titleView.titleLabel?.text = "导航栏"
-        //titleView.backgroundColor = UIColor.red
-        //self.navigationItem.titleView = titleView
     }
 }
 

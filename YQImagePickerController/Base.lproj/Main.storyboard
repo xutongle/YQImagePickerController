@@ -22,12 +22,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESh-ZY-6A8">
-                                <rect key="frame" x="113" y="309" width="150" height="50"/>
+                                <rect key="frame" x="112" y="48" width="150" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="LEP-dm-SGO"/>
-                                    <constraint firstAttribute="height" constant="50" id="izb-I5-S6T"/>
+                                    <constraint firstAttribute="height" constant="50" id="JCC-ty-YIC"/>
+                                    <constraint firstAttribute="width" constant="150" id="u29-v6-lEK"/>
                                 </constraints>
-                                <state key="normal" title="选取"/>
+                                <state key="normal" title="默认样式"/>
                                 <connections>
                                     <action selector="btnDidClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wJz-xb-Ybm"/>
                                 </connections>
@@ -35,14 +35,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ESh-ZY-6A8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1mF-jF-tub"/>
-                            <constraint firstItem="ESh-ZY-6A8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="SUS-2F-V17"/>
+                            <constraint firstItem="ESh-ZY-6A8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BLI-eD-mdN"/>
+                            <constraint firstItem="ESh-ZY-6A8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="28" id="jD2-fE-GlZ"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-58.399999999999999" y="134.48275862068968"/>
+            <point key="canvasLocation" x="-153" y="85"/>
         </scene>
     </scenes>
 </document>

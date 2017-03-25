@@ -17,6 +17,7 @@
 		E82454361E8577F000B06760 /* YQAlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82454301E8577F000B06760 /* YQAlbumModel.swift */; };
 		E82454371E8577F000B06760 /* YQAssetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82454311E8577F000B06760 /* YQAssetModel.swift */; };
 		E82454381E8577F000B06760 /* YQAlbumDropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82454331E8577F000B06760 /* YQAlbumDropdownMenu.swift */; };
+		E8CA0FFE1E859C3100F8B9C2 /* YQAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CA0FFD1E859C3100F8B9C2 /* YQAlbumCell.swift */; };
 		E8DC76FE1E84F61300E33D5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DC76FC1E84F61300E33D5B /* AppDelegate.swift */; };
 		E8DC76FF1E84F61300E33D5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DC76FD1E84F61300E33D5B /* ViewController.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		E82454301E8577F000B06760 /* YQAlbumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQAlbumModel.swift; sourceTree = "<group>"; };
 		E82454311E8577F000B06760 /* YQAssetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQAssetModel.swift; sourceTree = "<group>"; };
 		E82454331E8577F000B06760 /* YQAlbumDropdownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQAlbumDropdownMenu.swift; sourceTree = "<group>"; };
+		E8CA0FFD1E859C3100F8B9C2 /* YQAlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQAlbumCell.swift; sourceTree = "<group>"; };
 		E8DC76FC1E84F61300E33D5B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8DC76FD1E84F61300E33D5B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				E82454331E8577F000B06760 /* YQAlbumDropdownMenu.swift */,
+				E8CA0FFD1E859C3100F8B9C2 /* YQAlbumCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				E82454381E8577F000B06760 /* YQAlbumDropdownMenu.swift in Sources */,
 				E8DC76FE1E84F61300E33D5B /* AppDelegate.swift in Sources */,
 				E82454351E8577F000B06760 /* YQImagePickerController.swift in Sources */,
+				E8CA0FFE1E859C3100F8B9C2 /* YQAlbumCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
