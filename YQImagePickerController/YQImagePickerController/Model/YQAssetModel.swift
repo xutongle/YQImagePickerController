@@ -26,5 +26,4 @@ class YQAssetModel: NSObject {
     var isSelected: Bool = false
     //持续时长
     var durationTime: String = ""
-    
 }

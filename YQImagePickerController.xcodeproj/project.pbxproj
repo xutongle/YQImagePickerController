@@ -16,10 +16,11 @@
 		E82454351E8577F000B06760 /* YQImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E824542E1E8577F000B06760 /* YQImagePickerController.swift */; };
 		E82454361E8577F000B06760 /* YQAlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82454301E8577F000B06760 /* YQAlbumModel.swift */; };
 		E82454371E8577F000B06760 /* YQAssetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82454311E8577F000B06760 /* YQAssetModel.swift */; };
-		E82454381E8577F000B06760 /* YQAlbumDropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82454331E8577F000B06760 /* YQAlbumDropdownMenu.swift */; };
+		E82454381E8577F000B06760 /* YQDropdownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = E82454331E8577F000B06760 /* YQDropdownMenu.swift */; };
 		E8CA0FFE1E859C3100F8B9C2 /* YQAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CA0FFD1E859C3100F8B9C2 /* YQAlbumCell.swift */; };
 		E8DC76FE1E84F61300E33D5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DC76FC1E84F61300E33D5B /* AppDelegate.swift */; };
 		E8DC76FF1E84F61300E33D5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DC76FD1E84F61300E33D5B /* ViewController.swift */; };
+		E8F54E921E865444006668F5 /* YQImagePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F54E911E865444006668F5 /* YQImagePreviewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,10 +56,11 @@
 		E824542E1E8577F000B06760 /* YQImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQImagePickerController.swift; sourceTree = "<group>"; };
 		E82454301E8577F000B06760 /* YQAlbumModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQAlbumModel.swift; sourceTree = "<group>"; };
 		E82454311E8577F000B06760 /* YQAssetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQAssetModel.swift; sourceTree = "<group>"; };
-		E82454331E8577F000B06760 /* YQAlbumDropdownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQAlbumDropdownMenu.swift; sourceTree = "<group>"; };
+		E82454331E8577F000B06760 /* YQDropdownMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQDropdownMenu.swift; sourceTree = "<group>"; };
 		E8CA0FFD1E859C3100F8B9C2 /* YQAlbumCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQAlbumCell.swift; sourceTree = "<group>"; };
 		E8DC76FC1E84F61300E33D5B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8DC76FD1E84F61300E33D5B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E8F54E911E865444006668F5 /* YQImagePreviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YQImagePreviewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			children = (
 				E824542E1E8577F000B06760 /* YQImagePickerController.swift */,
 				E824542D1E8577F000B06760 /* YQImageController.swift */,
+				E8F54E911E865444006668F5 /* YQImagePreviewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,7 +171,7 @@
 		E82454321E8577F000B06760 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E82454331E8577F000B06760 /* YQAlbumDropdownMenu.swift */,
+				E82454331E8577F000B06760 /* YQDropdownMenu.swift */,
 				E8CA0FFD1E859C3100F8B9C2 /* YQAlbumCell.swift */,
 			);
 			path = View;
@@ -324,7 +327,8 @@
 				E82454341E8577F000B06760 /* YQImageController.swift in Sources */,
 				E82454361E8577F000B06760 /* YQAlbumModel.swift in Sources */,
 				E8DC76FF1E84F61300E33D5B /* ViewController.swift in Sources */,
-				E82454381E8577F000B06760 /* YQAlbumDropdownMenu.swift in Sources */,
+				E82454381E8577F000B06760 /* YQDropdownMenu.swift in Sources */,
+				E8F54E921E865444006668F5 /* YQImagePreviewController.swift in Sources */,
 				E8DC76FE1E84F61300E33D5B /* AppDelegate.swift in Sources */,
 				E82454351E8577F000B06760 /* YQImagePickerController.swift in Sources */,
 				E8CA0FFE1E859C3100F8B9C2 /* YQAlbumCell.swift in Sources */,

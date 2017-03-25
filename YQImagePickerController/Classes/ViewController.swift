@@ -21,7 +21,6 @@ class ViewController: UIViewController {
         let picker = YQImagePickerController(delegate: self)
         
         self.present(picker, animated: true, completion: nil)
-        
     }
 }
 
