@@ -93,14 +93,18 @@ extension YQImageController {
         let letfBtn = UIBarButtonItem(title: "取消", style: .plain, target: self, action: #selector(YQImageController.cancelBtnDidClick))
         self.navigationItem.leftBarButtonItem = letfBtn
         
-        let size = CGSize(width: self.view.frame.width - (self.navigationItem.rightBarButtonItem?.width)! * 2.0 - 20, height: 30)
-        let dropdownMenu = YQDropdownMenu(navigationController: self.navigationController!, title: "8888", allAlbums: [], size: size)
-        dropdownMenu.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
+        YQImageManager.manager.getAllAlbums(isAllowPickVideo: true, isAlowPickImage: true) { (albumModels) in
             
-            print("Did select item at index: \(indexPath)")
+            //设置导航栏下拉菜单按钮
+            let size = CGSize(width: self.view.frame.width - (self.navigationItem.rightBarButtonItem?.width)! * 2.0 - 20, height: 30)
+            let dropdownMenu = YQDropdownMenu(navigationController: self.navigationController!, title: "8888", allAlbums: albumModels, size: size)
+            dropdownMenu.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
+                
+                print("Did select item at index: \(indexPath)")
+            }
+            
+            self.navigationItem.titleView = dropdownMenu
         }
-        
-        self.navigationItem.titleView = dropdownMenu
     }
     
     

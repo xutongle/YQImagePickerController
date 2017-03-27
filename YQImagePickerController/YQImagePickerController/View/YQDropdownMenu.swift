@@ -16,7 +16,7 @@ private let YQAlbumCellHeight: CGFloat = 60.0
 class YQDropdownMenu: UIView {
     
     //用户手机中所有的相册集数组
-    private var allAlbums: [YQAlbumModel]?
+    fileprivate var allAlbums: [YQAlbumModel]?
     
     //选中下标的回调
     open var didSelectItemAtIndexHandler: ((_ indexPath: Int) -> ())?
@@ -50,6 +50,7 @@ class YQDropdownMenu: UIView {
         self.isShown = false
         self.backgroundColor = UIColor.green
         self.navigationController = navigationController
+        self.allAlbums = allAlbums
         
         let titleTapGesture = UITapGestureRecognizer(target: self, action: #selector(YQDropdownMenu.menuDidTap))
         self.addGestureRecognizer(titleTapGesture)
@@ -72,6 +73,11 @@ class YQDropdownMenu: UIView {
         self.tableView.addGestureRecognizer(menuWrapperTapGesture)
         
         self.menuWrapper.addSubview(self.tableView)
+        
+        self.menuTitle = UILabel(frame: frame)
+        self.menuTitle.sizeToFit()
+        self.menuTitle.text = title
+        self.addSubview(self.menuTitle)
     }
     
     func menuDidTap() {
@@ -112,12 +118,12 @@ class YQDropdownMenu: UIView {
 extension YQDropdownMenu: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return (self.allAlbums?.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: YQAlbumCellId)
-        cell?.textLabel?.text = "222"
+        cell?.textLabel?.text = allAlbums?[indexPath.row].name
         return cell!
     }
     
@@ -126,7 +132,7 @@ extension YQDropdownMenu: UITableViewDataSource, UITableViewDelegate {
         if (self.didSelectItemAtIndexHandler != nil) {
             self.didSelectItemAtIndexHandler!(indexPath.row)
             //设置选中的标题文字
-            //self.menuTitle.text =
+            self.menuTitle.text = allAlbums?[indexPath.row].name
         }
         
         self.hideMenu()
