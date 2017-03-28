@@ -48,15 +48,10 @@ class YQImageController: UICollectionViewController {
         
         //设置UICollectionViewLayout属性
         let layout = UICollectionViewFlowLayout()
-        
         let itemWH = (UIScreen.main.bounds.width - CGFloat(columnNumber + 1) * cellMargin) / CGFloat(columnNumber)
-        
         layout.itemSize = CGSize(width: itemWH, height: itemWH)
-        
         layout.minimumLineSpacing = cellMargin
-        
         layout.minimumInteritemSpacing = cellMargin
-        
         layout.scrollDirection = UICollectionViewScrollDirection.vertical
         
         super.init(collectionViewLayout: layout)
@@ -122,11 +117,17 @@ class YQImageController: UICollectionViewController {
     
     func previewBtnDidClick() {
         
-        dropdownMenu?.hideMenu()
-        
-        let previewVC = YQImagePreviewController()
-        
-        self.navigationController?.pushViewController(previewVC, animated: true)
+        if (dropdownMenu?.isShown)! {
+            dropdownMenu?.hideMenu()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                let previewVC = YQImagePreviewController()
+                self.navigationController?.pushViewController(previewVC, animated: true)
+            }
+            
+        } else {
+            let previewVC = YQImagePreviewController()
+            self.navigationController?.pushViewController(previewVC, animated: true)
+        }
     }
     
     func cancelBtnDidClick() {
@@ -145,15 +146,15 @@ class YQImageController: UICollectionViewController {
 
 extension YQImageController: YQDropdownMenuDelegate {
     
-    func dropdownMenuWillOpen(_ menu: YQDropdownMenu!) {
+    func dropdownMenuWillOpen(_ menu: YQDropdownMenu) {
         
     }
     
-    func dropdownMenuWillFold(_ menu: YQDropdownMenu!) {
+    func dropdownMenuWillFold(_ menu: YQDropdownMenu) {
         
     }
     
-    func dropdownMenu(_ menu: YQDropdownMenu!, didSelecteItemAtIndex: NSInteger, selectedItem: YQAlbumModel?) {
+    func dropdownMenu(_ menu: YQDropdownMenu, didSelectItemAtIndex: NSInteger, selectedItem: YQAlbumModel?) {
         
     }
 }

@@ -17,7 +17,7 @@ import UIKit
     @objc optional func dropdownMenuWillFold(_ menu: YQDropdownMenu)
     
     //选取完视频资源之后会执行该代理方法
-    @objc optional func dropdownMenu(_ menu: YQDropdownMenu, didSelecteItemAtIndex: NSInteger, selectedItem: YQAlbumModel?)
+    @objc optional func dropdownMenu(_ menu: YQDropdownMenu, didSelectItemAtIndex: NSInteger, selectedItem: YQAlbumModel?)
 }
 
 
@@ -111,9 +111,9 @@ class YQDropdownMenu: UIView {
         
         isShown = true
         
-        //if (delegate?.responds(to: #selector(YQDropdownMenuDelegate.dropdownMenuWillOpen(_:))))! {
-          //  delegate?.dropdownMenuWillOpen!(self)
-        //}
+        if (delegate?.responds(to: #selector(YQDropdownMenuDelegate.dropdownMenuWillOpen(_:))))! {
+            delegate?.dropdownMenuWillOpen!(self)
+        }
         
         menuWrapper.backgroundColor = UIColor(displayP3Red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 0.2)
         navigationController?.view.insertSubview(menuWrapper, belowSubview: (navigationController?.navigationBar)!)
@@ -135,9 +135,9 @@ class YQDropdownMenu: UIView {
         
         isShown = false
         
-        //if (delegate?.responds(to: #selector(YQDropdownMenuDelegate.dropdownMenuWillFold(_:))))! {
-          //  delegate?.dropdownMenuWillFold!(self)
-        //}
+        if (delegate?.responds(to: #selector(YQDropdownMenuDelegate.dropdownMenuWillFold(_:))))! {
+            delegate?.dropdownMenuWillFold!(self)
+        }
         
         menuWrapper.backgroundColor = UIColor(displayP3Red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 0.0)
         //执行动画
@@ -164,7 +164,6 @@ extension YQDropdownMenu: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (allAlbums.count)
-        //return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -178,12 +177,11 @@ extension YQDropdownMenu: UITableViewDataSource, UITableViewDelegate {
         
         tableView.deselectRow(at: indexPath, animated: true)
         hideMenu()
-        //实现代理方法
-        //if (delegate?.responds(to: #selector(YQDropdownMenuDelegate.dropdownMenu(_:didSelecteItemAtIndex:selectedItem:))))! {
-          //  delegate?.dropdownMenu!(self, didSelecteItemAtIndex: indexPath.row, selectedItem: nil)
-        //}
-        print(indexPath.row)
         
+        //实现代理方法
+        if (delegate?.responds(to: #selector(YQDropdownMenuDelegate.dropdownMenu(_:didSelectItemAtIndex:selectedItem:))))! {
+            delegate?.dropdownMenu!(self, didSelectItemAtIndex: indexPath.row, selectedItem: allAlbums[indexPath.row])
+        }
     }
 }
 
