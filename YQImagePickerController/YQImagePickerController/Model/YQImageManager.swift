@@ -175,12 +175,22 @@ extension YQImageManager {
             fetchResult.enumerateObjects({ (object, index, stop) in
                 
                 // 过滤掉PHCollectionList类的的对象
-                if !object.isKind(of: PHAssetCollection.self) { }
+                if !object.isKind(of: PHAssetCollection.self) {
+                    
+//                    let shouldStop: ObjCBool = true
+//                     stop.initialize(to: shouldStop)
+                }
+                
                 if object.isKind(of: PHAssetCollection.self) {
                     
                     let fetchResult: PHFetchResult = PHAsset.fetchAssets(in: object as! PHAssetCollection, options: option)
                     // 过滤掉 <1 的集合
-                    if fetchResult.count < 1 {}
+                    if fetchResult.count < 1 {
+                        
+                        //let shouldStop: ObjCBool = true// true or false ...
+                        //stop.initialize(to: shouldStop)
+                    }
+                    
                     let albumName: NSString = object.localizedTitle as NSString!
                     // 过滤掉已经被删除的图片
                     if albumName.contains("Deleted") || albumName.contains("最近删除") {}

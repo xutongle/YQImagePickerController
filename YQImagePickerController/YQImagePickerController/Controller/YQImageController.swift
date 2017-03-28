@@ -17,6 +17,9 @@ private let toolBarHeight: CGFloat = 54.0
 
 class YQImageController: UICollectionViewController {
     
+    //用户手机中所有的相册集数组
+    fileprivate var allAlbums: [YQAlbumModel]?
+    
     private var maxImageCount: NSInteger = 9
     
     private var columnNumber: NSInteger = 3
@@ -74,17 +77,8 @@ class YQImageController: UICollectionViewController {
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
-}
-
-//MARK:- 设置导航栏和底部工具条相关属性
-
-extension YQImageController {
-    
-    func configNavgationBar() {
+    fileprivate func configNavgationBar() {
         
         //设置右边的预览按钮
         let rightBtn = UIBarButtonItem(title: "预览", style: .plain, target: self, action: #selector(YQImageController.previewBtnDidClick))
@@ -93,22 +87,21 @@ extension YQImageController {
         let letfBtn = UIBarButtonItem(title: "取消", style: .plain, target: self, action: #selector(YQImageController.cancelBtnDidClick))
         self.navigationItem.leftBarButtonItem = letfBtn
         
+        //设置下拉菜单
+        let size = CGSize(width: self.view.frame.width - (self.navigationItem.rightBarButtonItem?.width)! * 2.0 - 60, height: 25)
+        self.dropdownMenu = YQDropdownMenu(navigationController: self.navigationController!, title: "8888", size: size)
+        self.navigationItem.titleView = dropdownMenu
+        
+        //获取到相册集数组，并刷新下拉菜单
         YQImageManager.manager.getAllAlbums(isAllowPickVideo: true, isAlowPickImage: true) { (albumModels) in
             
-            //设置导航栏下拉菜单按钮
-            let size = CGSize(width: self.view.frame.width - (self.navigationItem.rightBarButtonItem?.width)! * 2.0 - 20, height: 30)
-            let dropdownMenu = YQDropdownMenu(navigationController: self.navigationController!, title: "8888", allAlbums: albumModels, size: size)
-            dropdownMenu.didSelectItemAtIndexHandler = {(indexPath: Int) -> () in
-                
-                print("Did select item at index: \(indexPath)")
-            }
-            
-            self.navigationItem.titleView = dropdownMenu
+            self.allAlbums = albumModels
+            self.dropdownMenu?.allAlbums = albumModels
         }
     }
     
     
-    func configToolBar() {
+    fileprivate func configToolBar() {
         
         let bottomToolBar = UIView(frame: CGRect(x: 0, y: UIScreen.main.bounds.size.height - toolBarHeight, width: UIScreen.main.bounds.size.width, height: toolBarHeight))
         
@@ -129,6 +122,8 @@ extension YQImageController {
     
     func previewBtnDidClick() {
         
+        dropdownMenu?.hideMenu()
+        
         let previewVC = YQImagePreviewController()
         
         self.navigationController?.pushViewController(previewVC, animated: true)
@@ -136,7 +131,29 @@ extension YQImageController {
     
     func cancelBtnDidClick() {
         
+        dropdownMenu?.hideMenu()
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+}
+
+//MARK:- 设置导航栏和底部工具条相关属性
+
+extension YQImageController: YQDropdownMenuDelegate {
+    
+    func dropdownMenuWillOpen(_ menu: YQDropdownMenu!) {
+        
+    }
+    
+    func dropdownMenuWillFold(_ menu: YQDropdownMenu!) {
+        
+    }
+    
+    func dropdownMenu(_ menu: YQDropdownMenu!, didSelecteItemAtIndex: NSInteger, selectedItem: YQAlbumModel?) {
         
     }
 }
@@ -145,15 +162,9 @@ extension YQImageController {
 // MARK: UICollectionViewDataSource && UICollectionViewDelegate
 extension YQImageController {
     
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
-        return 1
-    }
-    
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 20
+        return (self.allAlbums?.first?.count)!
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
