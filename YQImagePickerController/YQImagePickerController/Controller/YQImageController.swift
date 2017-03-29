@@ -88,7 +88,7 @@ class YQImageController: UICollectionViewController {
         self.navigationItem.titleView = dropdownMenu
         
         //获取到相册集数组，并刷新下拉菜单
-        YQImageManager.manager.getAllAlbums(isAllowPickVideo: true, isAlowPickImage: true) { (albumModels) in
+        YQImageManager.manager.getAllAlbumModels(isAllowPickVideo: true, isAlowPickImage: true) { (albumModels) in
             
             self.allAlbums = albumModels
             self.dropdownMenu?.allAlbums = albumModels
